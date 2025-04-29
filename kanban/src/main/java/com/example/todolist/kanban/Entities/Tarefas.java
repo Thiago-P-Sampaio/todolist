@@ -15,7 +15,6 @@ public class Tarefas {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long id_usuario;
     private String descricao;
     private String setor;
     private Prioridade prioridade;
@@ -25,7 +24,7 @@ public class Tarefas {
 
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
+//    @JoinColumn(name = "id_usuario")
     private Usuarios usuario;
 
     public Tarefas() {
@@ -33,7 +32,6 @@ public class Tarefas {
 
     public Tarefas(Long id, Long id_usuario, String descricao, String setor, Prioridade prioridade, LocalDate data_cadastro, Status status) {
         this.id = id;
-        this.id_usuario = id_usuario;
         this.descricao = descricao;
         this.setor = setor;
         this.prioridade = prioridade;
@@ -49,13 +47,6 @@ public class Tarefas {
         this.id = id;
     }
 
-    public Long getId_usuario() {
-        return id_usuario;
-    }
-
-    public void setId_usuario(Long id_usuario) {
-        this.id_usuario = id_usuario;
-    }
 
     public String getDescricao() {
         return descricao;
@@ -104,4 +95,5 @@ public class Tarefas {
     public void setUsuario(Usuarios usuario) {
         this.usuario = usuario;
     }
+
 }

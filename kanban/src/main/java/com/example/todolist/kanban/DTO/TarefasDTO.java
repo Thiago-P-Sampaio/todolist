@@ -29,8 +29,8 @@ public class TarefasDTO {
         this.data_cadastro = data_cadastro;
         this.status = status;
     }
-
-    private TarefasDTO(Tarefas tarefa){
+    //Referenciando a minha entidade "Tarefa"
+    public TarefasDTO(Tarefas tarefa){
         this.id = tarefa.getId();
         this.id_usuario = tarefa.getUsuario().getId();
         this.descricao = tarefa.getDescricao();

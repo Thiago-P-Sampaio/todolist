@@ -14,7 +14,7 @@ public class Usuarios {
     private String nome;
     private String email;
 
-    @OneToMany
+    @OneToMany(mappedBy = "usuario")
     private List<Tarefas> tarefa = new ArrayList<>();
 
     public Usuarios() {
@@ -48,5 +48,13 @@ public class Usuarios {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Tarefas> getTarefa() {
+        return tarefa;
+    }
+
+    public void setTarefa(List<Tarefas> tarefa) {
+        this.tarefa = tarefa;
     }
 }
